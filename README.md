@@ -3,22 +3,22 @@
 </div> 
 
 
-BMH08002-4
+BM32S2031-1
 ===========================================================
 
-The BMH08002-4 is an oximeter and heart rate module from Best Modules, which uses the UART communication method. This document provides the description of the BMH08002-4 Arduino Lib functions and how to install the Arduino Lib. The example uses the BMH83M002 module to demonstrate the function of obtaining blood oxygen, heart rate and perfusion index.
+The BEST MODULES BM32S2031-1 is a second generation proximity sensor module, which uses the UART communication method. This document provides the description of the BM32S2031-1 Arduino Lib functions and how to install the Arduino Lib. The example demonstrates the functions of obtaining the version number and the signal value when the module is in the sensing status with the BMS31M001 module.
 
 #### Applicable types:
 <div align=center>
 
-|Part No.   |Description                   |
-|:---------:|:----------------------------:|
-|BMH08002-4 |Oximeter and Heart Rate Module|
-|BMH83M002  |Integrated BMH08002-4 Module  |
+|Paet No.   |Description                              |
+|:---------:|:---------------------------------------:|
+|BM32S2031-1|Second generation proximity sensor module|
+|BMS31M001  |Integrated BM32S2031-1 module            |
 
 </div> 
 
-This library can be installed via the Arduino Library manager. Search for ** BMH08002-4**. 
+This library can be installed via the Arduino Library manager. Search for ** BM32S2031-1**. 
 
 Repository Contents
 -------------------
@@ -31,7 +31,7 @@ Repository Contents
 Documentation 
 -------------------
 
-* **[ BMH08002-4 Arduino Library V1.0.1 Description v100](https://www.bestmodulescorp.com/BMH08002-4.html#tab-product2)** - Arduino Library Description.
+* **[ BM32S2031-1 Arduino Library V1.0.1 Description v100](https://www.bestmodulescorp.com/bm32s2031-1.html#tab-product2)** - Arduino Library Description.
 
 Version History  
 -------------------
