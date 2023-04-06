@@ -1,0 +1,53 @@
+##############################################
+# Coloring Map For （BM32S2031-1 ）
+##############################################
+##############################################
+# Classes and Objects (KEYWORD1)
+##############################################
+BM32S2031_1	KEYWORD1
+##############################################
+# Methods and Functions (KEYWORD2)
+##############################################
+getIRStatus	KEYWORD2
+readIRSignalValue	KEYWORD2
+distanceLearning	KEYWORD2
+reset	KEYWORD2
+saveSettings	KEYWORD2
+restoreSettings	KEYWORD2
+getFWVer	KEYWORD2
+getIRThreshold	KEYWORD2
+getIRDebounce	KEYWORD2
+getIRResponseTime	KEYWORD2
+getIROutputTime	KEYWORD2
+getMode	KEYWORD2
+getIRCurrent	KEYWORD2
+setIRThreshold	KEYWORD2
+setIRDebounce	KEYWORD2
+setIRResponseTime	KEYWORD2
+setIROutputTime	KEYWORD2
+setMode	KEYWORD2
+setIRCurrent	KEYWORD2
+readIRRef	KEYWORD2
+readIREnv	KEYWORD2
+writeBytes	KEYWORD2
+readBytes	KEYWORD2
+##############################################
+# Constants (LITERAL1)
+##############################################
+BM32S2031_1_BAUD	LITERAL1
+SUCCESS	LITERAL1
+FAIL	LITERAL1
+CHECK_OK	LITERAL1
+CHECK_ERROR	LITERAL1
+TIMEOUT_ERROR	LITERAL1
+SPEED_8_MS	LITERAL1	
+SPEED_16_MS	LITERAL1
+SPEED_32_MS	LITERAL1
+SPEED_64_MS	LITERAL1
+SPEED_128_MS	LITERAL1
+SPEED_256_MS	LITERAL1
+SPEED_500_MS	LITERAL1
+SPEED_1_S	LITERAL1
+SPEED_FASTMODE	LITERAL1
+_rxPin	LITERAL1
+_txPin	LITERAL1
