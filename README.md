@@ -18,7 +18,7 @@ The BEST MODULES BM32S2031-1 is a second generation proximity sensor module, whi
 
 </div> 
 
-This library can be installed via the Arduino Library manager. Search for ** BM32S2031-1**. 
+This library can be installed via the Arduino Library manager. Search for **BM32S2031-1**. 
 
 Repository Contents
 -------------------
