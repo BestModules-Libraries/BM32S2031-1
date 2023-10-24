@@ -40,7 +40,6 @@ Version History
 &emsp;&emsp;- Initial public release.
 * **V1.0.2**  
 &emsp;&emsp;- Modify function:getFWVer(); 
-&emsp;&emsp;- Modify example:readIR;
 
 License Information
 -------------------
