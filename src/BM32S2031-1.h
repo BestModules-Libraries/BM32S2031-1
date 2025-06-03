@@ -1,8 +1,8 @@
 /*****************************************************************
 File:             BM32S2031-1.h
-Author:           BESTMODULES
+Author:           BEST MODULES CORP.
 Description:      Define classes and required variables
-Version:          V1.0.2   -- 2023-09-14
+Version:          V1.0.3   -- 2025-03-13
 ******************************************************************/
 #ifndef _BM32S2031_1_H_
 #define _BM32S2031_1_H_
