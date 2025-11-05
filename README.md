@@ -43,6 +43,8 @@ Version History
 &emsp;&emsp;- Modify function:getFWVer(); 
 * **V1.0.3**  
 &emsp;&emsp;- Add applicable models: BMS31M001A; 
+* **V1.0.4**  
+&emsp;&emsp;- Modification: Timeout dead loop caused by variable definition of readbytes function; 
 
 License Information
 -------------------

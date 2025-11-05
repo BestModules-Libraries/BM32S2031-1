@@ -2,7 +2,7 @@
 File:             BM32S2031-1.cpp
 Author:           BEST MODULES CORP.
 Description:      UART communication with the BM32S2031_1 and obtain the corresponding value  
-Version:          V1.0.3   -- 2025-03-13
+Version:          V1.0.4   -- 2025-11-5
 ******************************************************************/
 #include "BM32S2031-1.h"
 /**********************************************************
@@ -11,8 +11,8 @@ Parameters:  *theSerial: Wire object if your board has more than one UART interf
                          parameter range:
                                          BMduino UNO: &Serial、&Serial1、&Serial2、&Serial3、&Serial4
                                          Arduino UNO：&Serial
-Return:          
-Others:     
+Return:      none     
+Others:      none
 **********************************************************/
 BM32S2031_1::BM32S2031_1(HardwareSerial *theSerial)
 {
@@ -23,8 +23,8 @@ BM32S2031_1::BM32S2031_1(HardwareSerial *theSerial)
 Description: Constructor
 Parameters: rxPin: Receiver pin of the UART
             txPin: Send signal pin of UART         
-Return:          
-Others:   
+Return:     none     
+Others:     none
 **********************************************************/
 BM32S2031_1::BM32S2031_1(uint8_t rxPin,uint8_t txPin)
 {
@@ -37,7 +37,7 @@ BM32S2031_1::BM32S2031_1(uint8_t rxPin,uint8_t txPin)
 /**********************************************************
 Description: Module Initial
 Parameters:  baudRate: Module communication baud rate(Unique 9600bps)        
-Return:          
+Return:      void    
 Others:   If the hardware UART is initialized, the _softSerial 
           pointer is null, otherwise it is non-null       
 **********************************************************/
@@ -58,9 +58,9 @@ void BM32S2031_1::begin(uint16_t baud)
 
 /**********************************************************
 Description: Get IR Induction state
-Parameters:         
+Parameters:  void       
 Return:      irStatus: 1:approach   0:not approach    
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::getIRStatus()
 {
@@ -78,9 +78,9 @@ uint8_t BM32S2031_1::getIRStatus()
 
 /**********************************************************
 Description: Read  signal value
-Parameters:         
+Parameters:  void       
 Return:      signalValue: irEnv - irRef     
-Others:      
+Others:      none
 **********************************************************/
 int16_t BM32S2031_1::readIRSignalValue()
 {
@@ -95,7 +95,7 @@ int16_t BM32S2031_1::readIRSignalValue()
 
 /**********************************************************
 Description: Enter distance learning mode
-Parameters:        
+Parameters:  void      
 Return:      0:distance Learn Success 
              1:distance Learn Fail       
 Others:      Place the obstacle above BM32S2031_1 at the distance you want to learn. 
@@ -128,9 +128,9 @@ uint8_t BM32S2031_1::distanceLearning()
 
 /**********************************************************
 Description: Module reset
-Parameters:        
+Parameters:  void      
 Return:      0:Success 1:Fail       
-Others:    
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::reset()
 {
@@ -151,7 +151,7 @@ uint8_t BM32S2031_1::reset()
 
 /**********************************************************
 Description: Save function parameters to EEPROM
-Parameters:         
+Parameters:  void       
 Return:      0:Success 1:Fail     
 Others:      Writes the current parameter to EEPROM
 **********************************************************/
@@ -176,7 +176,7 @@ uint8_t BM32S2031_1::saveSettings()
 /**********************************************************
 Description: Assigns values to function parameters by reading 
              values from EEPROM
-Parameters:         
+Parameters:  void       
 Return:      0:Success 1:Fail     
 Others:      Read function parameters from EEPROM
 **********************************************************/
@@ -199,7 +199,7 @@ uint8_t BM32S2031_1::restoreSettings()
 
 /**********************************************************
 Description: Get the version information
-Parameters:         
+Parameters:  void       
 Return:      ver = ver_highByte<<8+ver_lowByte     
 Others:      EX. //High byte     LOW byte
                  //0b00000 0001  0000 0000(version 1.0)
@@ -230,9 +230,9 @@ int16_t BM32S2031_1::getFWVer()
 
 /**********************************************************
 Description: Get IR trigger threshold
-Parameters:         
+Parameters:  void       
 Return:      threshold: Trigger threshold(16~180)   
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::getIRThreshold()
 {
@@ -250,9 +250,9 @@ uint8_t BM32S2031_1::getIRThreshold()
 
 /**********************************************************
 Description: Get IR debounce value
-Parameters:         
+Parameters:  void       
 Return:      debounce: Number of debounces(0~15)   
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::getIRDebounce()
 {
@@ -270,7 +270,7 @@ uint8_t BM32S2031_1::getIRDebounce()
 
 /**********************************************************
 Description: Get IR response time 
-Parameters:         
+Parameters:  void       
 Return:      responseTime: 
                           0x00:SPEED_8_MS       
                           0x01:SPEED_16_MS      
@@ -281,7 +281,7 @@ Return:      responseTime:
                           0x06:SPEED_500_MS
                           0x07:SPEED_1_S  
                           0x08:SPEED_FASTMODE    
-Others:      
+Others:    none  
 **********************************************************/
 uint8_t BM32S2031_1::getIRResponseTime()
 {
@@ -299,7 +299,7 @@ uint8_t BM32S2031_1::getIRResponseTime()
 
 /**********************************************************
 Description: Get IR output time
-Parameters:         
+Parameters:  void       
 Return:      outputtime: 0X00~0XFF 
                          0X00: 0 seconds
                          0x01: 1 seconds
@@ -324,7 +324,7 @@ uint8_t BM32S2031_1::getIROutputTime()
 
 /**********************************************************
 Description: Get Mode function setting
-Parameters:         
+Parameters:  void       
 Return:       Mode :
                     Bit4~0 Setting is invalid
                     Bit5: Output mode selection 
@@ -355,14 +355,14 @@ uint8_t BM32S2031_1::getMode()
 
 /**********************************************************
 Description: Get IR emission current value 
-Parameters:         
+Parameters:  void       
 Return:      current: 
                       0~ 63,5 mA/step, first order amplification  
                       64~ 127,5 mA/step, two-stage amplification  
                       The calculation formula of current value is as follows:  
                       Dn >= 63, IEmmision = (Dn - 64) x 5 + 5  
                       Dn <= 63 or less, IEmmision = Dn x 5 + 5        
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::getIRCurrent()
 {
@@ -383,7 +383,7 @@ Description: Set IR trigger threshold
 Parameters:  threshold: Trigger threshold
                         parameter range:16~180(Default 16)      
 Return:      0:Success 1:Fail    
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::setIRThreshold(uint8_t  threshold)
 {
@@ -409,7 +409,7 @@ Description:  Set IR debounce value
 Parameters:  debounce: Number of debounces
                        parameter range:0~15(Default 0)      
 Return:      0:Success 1:Fail    
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::setIRDebounce(uint8_t  debounce)
 {
@@ -444,7 +444,7 @@ Parameters:  response time: 0x00~0x08 (Default 0x06)
                       0x07:SPEED_1_S  
                       0x08:SPEED_FASTMODE        
 Return:      0:Success 1:Fail 
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::setIRResponseTime(uint8_t  responseTime)
 {
@@ -541,7 +541,7 @@ Parameters:  current:Emission current parameters
                                   Dn >= 63, IEmmision = (Dn - 64) x 5 + 5  
                                   Dn <= 63 or less, IEmmision = Dn x 5 + 5       
 Return:      0:Success 1:Fail            
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::setIRCurrent(uint8_t  current)
 { 
@@ -566,9 +566,9 @@ uint8_t BM32S2031_1::setIRCurrent(uint8_t  current)
 
 /**********************************************************
 Description: Get reference value 
-Parameters:         
+Parameters:  void       
 Return:      IrRef:Proximity sensing reference value. (Sensing value when IR LED is not on)      
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::readIRRef()
 {
@@ -586,9 +586,9 @@ uint8_t BM32S2031_1::readIRRef()
 
 /**********************************************************
 Description: Get environmental value 
-Parameters:         
+Parameters:  void       
 Return:      IREnv:Proximity sensing environmental values. (Sensing value when IR LED is turned on )     
-Others:      
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::readIREnv()
 {
@@ -608,8 +608,8 @@ uint8_t BM32S2031_1::readIREnv()
 Description: writeBytes
 Parameters:  wbuf[]:Variables for storing Data to be sent
              wlen:Length of data sent  
-Return:   
-Others:
+Return:      void
+Others:      none
 **********************************************************/
 void BM32S2031_1::writeBytes(uint8_t wbuf[], uint8_t wlen)
 {
@@ -637,12 +637,13 @@ void BM32S2031_1::writeBytes(uint8_t wbuf[], uint8_t wlen)
 Description: readBytes
 Parameters:  rbuf[]:Variables for storing Data to be obtained
              rlen:Length of data to be obtained
-Return:   
-Others:
+Return:      CHECK_OK:0 / CHECK_ERROR:1 / TIMEOUT_ERROR:2
+Others:      none
 **********************************************************/
 uint8_t BM32S2031_1::readBytes(uint8_t rbuf[], uint8_t rlen, uint16_t timeOut)
 {
-  uint8_t i = 0, delayCnt = 0, checkSum = 0;
+  uint8_t i = 0, checkSum = 0;
+  uint16_t delayCnt = 0;
 /* Select SoftwareSerial Interface */
   if (_softSerial != NULL)
   {
